@@ -134,7 +134,13 @@ def format_text_to_basic_html(text):
     return '\n'.join(html_parts)
 
 @app.route('/')
+def landing():
+    """Landing page"""
+    return render_template('landing.html')
+
+@app.route('/app')
 def index():
+    """Main application page"""
     return render_template('index.html')
 
 @app.route('/api/upload-resume', methods=['POST'])
